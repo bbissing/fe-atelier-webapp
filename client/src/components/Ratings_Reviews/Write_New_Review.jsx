@@ -72,29 +72,24 @@ class Write_New_Review extends React.Component {
   }
 
   handleClick(e, rating) {
-
-    console.log(e);
     if(e.target.className === "rating") {
       this.setState({
         starRating: rating
-        }, () => { console.log(this.state.starRating) }
-      )
+      })
     } else if (e.target.id === "yes" || e.target.id === "no") {
-      console.log('hello, this is a test');
       let value = e.target.value === "yes" ? true : false;
-      this.setState({recommend: value}, () => {console.log(this.state.recommend)});
+      this.setState({recommend: value});
     } else if (e.target.className === "characteristic_rating"){
       let id = e.target.id;
       let value = e.target.value;
       this.state.characteristics[id] = parseInt(value);
-      this.setState({characteristics: this.state.characteristics}, () => {console.log(this.state.characteristics)});
+      this.setState({characteristics: this.state.characteristics});
     }
 
     this.props.interaction(e.target);
   }
 
   uploadImage(files) {
-    console.log(files);
     const formData = new FormData();
     formData.append("file", files[0]);
     formData.append("upload_preset", `${config.cloudinary_preset}`);
@@ -104,8 +99,6 @@ class Write_New_Review extends React.Component {
         let url = response.data.url;
         this.state.photos.push(url)
         this.state.assets.push(response.data);
-        console.log('response data', response);
-        console.log(this.state.photos);
         this.setState({
           photos: this.state.photos,
           assets: this.state.assets
@@ -130,11 +123,8 @@ class Write_New_Review extends React.Component {
       characteristics: this.state.characteristics
     };
 
-    console.log(object);
-
     axios.post('/reviews', object)
     .then((response) => {
-      console.log(response);
       this.closeModal();
     })
     .catch((error) => { console.error(error); });
