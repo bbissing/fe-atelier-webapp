@@ -1,5 +1,6 @@
 # Atelier
-Atelier is a responsive and interactive e-commerce clothing website.
+
+[Atelier](http://3.18.213.191/:8080) is a responsive and interactive e-commerce clothing website.
 This website is divided into 4 categories.
 
 [![Demo]](https://user-images.githubusercontent.com/57865436/199666313-ef292c70-bb0d-461a-a618-a6a3c224423f.mp4)
