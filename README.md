@@ -41,8 +41,8 @@ $ npm install
 config_rr.js
 ```javascript
 module.exports = {
-  // Add your "preset"
-  cloudinary_preset: ""
+  cloudinary_name: "" // Add your "cloud name"
+  cloudinary_preset: ""  // Add your "preset"
 }
 ```
 
